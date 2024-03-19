@@ -99,10 +99,9 @@ h1, h2, h3 {
 }
 /** Productos **/
 .producto {
-    background-color: var(--primarioOscuro);
-    padding: 1rem;
+    background-color: var(--primarioOscuro); /*color de fondo de cada producto*/
+    padding: 1rem; /*separacion hacia adentro creando un marco*/
 }
-
 .producto__nombre {
     font-size: 4rem;
 }
@@ -111,9 +110,31 @@ h1, h2, h3 {
     color: var(--secundario);
 }
 .producto__nombre,
-.producto__precio {
+.producto__precio { /*aplica el formato a ambos clases*/
     font-family: var(--fuentePrincipal);
     margin: 1rem 0;
     text-align: center;
-    line-height: 1.2;
+    line-height: 1.2; /*interlineado*/
+}
+/** Graficos **/
+.grafico {
+    min-height: 30rem; /*alto minimo de la imagen*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 3; /*derecha a izquierda*/
+}
+.grafico--camisas {
+    grid-row: 2 / 3;  /*de arriva hacia abajo*/
+    background-image: url(../img/grafico1.jpg);
+}
+.grafico--node {
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8 / 9;
+}
+
+@media (min-width: 768px) {
+    .grafico--node {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
 }
